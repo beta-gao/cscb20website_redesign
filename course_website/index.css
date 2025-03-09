@@ -1,102 +1,104 @@
+/* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
   display: flex;
-  justify-content: center;
-  background-color: var(--nav-bg-color);
-  padding: 10px 0;
+  justify-content: center; /* 居中对齐 */
+  align-items: center;
+  background-color: #003366; /* 让导航栏有颜色 */
+  font-family: "Georgia", serif;
+  padding: 15px 0;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  margin-bottom: 80px; 
 }
 
 .leftnavigation ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  display: flex; /* 让菜单项并排 */
   gap: 20px;
 }
-
-.content {
-  margin-top: 130px;
-}
-
 
 .leftnavigation ul li {
   position: relative;
 }
 
-.leftnavigation ul li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #003366;
-  padding: 0;
-  list-style: none;
-  width: 150px;
-}
-
-.leftnavigation ul li:hover ul {
+.leftnavigation ul li a {
   display: block;
-}
-
-.leftnavigation ul li ul li {
-  display: block;
-}
-
-.leftnavigation ul li ul li a {
-  display: block;
-  padding: 10px;
+  padding: 10px 15px;
   color: white;
   text-decoration: none;
-}
-
-.leftnavigation ul li ul li a:hover {
-  background-color: #004488;
-}
-
-.leftnavigation a {
-  color: var(--nav-text-color);
-  text-decoration: none;
-  padding: 10px 15px;
+  font-size: 16px;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.leftnavigation a:hover {
+.leftnavigation ul li a:hover {
   color: #FFD700;
+  background-color: #004488;
+  border-radius: 5px;
 }
 
-/* Dark Mode Styling */
-:root {
-  --bg-color: #FFFFFF;
-  --text-color: #000000;
-  --nav-bg-color: #003366;
-  --nav-text-color: #FFFFFF;
+
+/* ✅ 让 Dark Mode 按钮正确显示 */
+#dark-mode-toggle {
+  display: none;
 }
 
-.dark-mode {
-  --bg-color: #121212;
-  --text-color: #E0E0E0;
-  --nav-bg-color: #1E1E1E;
-  --nav-text-color: #B0B0B0;
+/* ✅ Dark Mode 按钮样式 */
+.dark-mode-label {
+  position: fixed;
+  top: 15px;  /* 确保按钮在导航栏上面 */
+  right: 20px; /* 靠右 */
+  padding: 10px 20px;
+  background-color: #0055AA;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 2000; /* 确保按钮在最上层 */
+}
+
+/* ✅ 悬停时颜色变化 */
+.dark-mode-label:hover {
+  background-color: #004488;
+}
+
+/* ✅ Dark Mode 启用时 */
+#dark-mode-toggle:checked ~ body {
+  background-color: #121212;
+  color: #E0E0E0;
+}
+
+/* ✅ Dark Mode 影响导航栏 */
+#dark-mode-toggle:checked ~ .leftnavigation {
+  background-color: #1E1E1E;
+}
+
+/* ✅ Dark Mode 影响内容区 */
+#dark-mode-toggle:checked ~ .content {
+  background-color: #121212;
+  color: #E0E0E0;
+}
+
+
+header1{
+  text-align: center;
+  color:rgb(114, 95, 160);
+  font-family: "Georgia", serif;
+  font-size: 20px;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-.leftnavigation {
-  background-color: var(--nav-bg-color);
-  color: var(--nav-text-color);
-}
-
-.leftnavigation a {
-  color: var(--nav-text-color);
+  margin-top: 80px;
 }
 
 
-
+@media screen and (max-width: 768px) {
+  .leftnavigation ul {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+}
