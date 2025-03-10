@@ -1,5 +1,5 @@
 /* 📌 让导航栏水平排列并固定在顶部 */
-.leftnavigation {
+.navigation {
   display: flex;
   justify-content: center; /* 居中对齐 */
   align-items: center;
@@ -13,19 +13,19 @@
   z-index: 1000;
 }
 
-.leftnavigation ul {
+.navigation ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex; /* 让菜单项并排 */
-  gap: 20px;
+  gap: 0px;
 }
 
-.leftnavigation ul li {
+.navigation ul li {
   position: relative;
 }
 
-.leftnavigation ul li a {
+.navigation ul li a {
   display: block;
   padding: 10px 15px;
   color: white;
@@ -34,7 +34,7 @@
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.leftnavigation ul li a:hover {
+.navigation ul li a:hover {
   color: #FFD700;
   background-color: #004488;
   border-radius: 5px;
@@ -73,7 +73,7 @@
 }
 
 /* ✅ Dark Mode 影响导航栏 */
-#dark-mode-toggle:checked ~ .leftnavigation {
+#dark-mode-toggle:checked ~ .navigation {
   background-color: #1E1E1E;
 }
 
@@ -97,7 +97,7 @@ body {
 
 
 @media screen and (max-width: 768px) {
-  .leftnavigation ul {
+  .navigation ul {
       flex-wrap: wrap;
       justify-content: center;
   }
