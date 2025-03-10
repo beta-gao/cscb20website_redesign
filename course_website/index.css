@@ -1,5 +1,5 @@
 /* 📌 让导航栏水平排列并固定在顶部 */
-.navigation {
+.leftnavigation {
   display: flex;
   justify-content: center; /* 居中对齐 */
   align-items: center;
@@ -13,19 +13,19 @@
   z-index: 1000;
 }
 
-.navigation ul {
+.leftnavigation ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex; /* 让菜单项并排 */
-  gap: 0px;
+  gap: 20px;
 }
 
-.navigation ul li {
+.leftnavigation ul li {
   position: relative;
 }
 
-.navigation ul li a {
+.leftnavigation ul li a {
   display: block;
   padding: 10px 15px;
   color: white;
@@ -34,7 +34,7 @@
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.navigation ul li a:hover {
+.leftnavigation ul li a:hover {
   color: #FFD700;
   background-color: #004488;
   border-radius: 5px;
@@ -66,23 +66,31 @@
   background-color: #004488;
 }
 
-/* ✅ Dark Mode 启用时 */
-#dark-mode-toggle:checked ~ body {
-  background-color: #121212;
-  color: #E0E0E0;
+/* ✅ 修正 Dark Mode 作用整个网页 */
+#dark-mode-toggle:checked ~ * {
+  background-color: #121212; /* 改变整个页面背景 */
+  color: #E0E0E0; /* 文字变亮 */
 }
 
 /* ✅ Dark Mode 影响导航栏 */
-#dark-mode-toggle:checked ~ .navigation {
-  background-color: #1E1E1E;
+#dark-mode-toggle:checked ~ .leftnavigation {
+  background-color:  #4c4a4a;
 }
 
 /* ✅ Dark Mode 影响内容区 */
-#dark-mode-toggle:checked ~ .content {
-  background-color: #121212;
+#dark-mode-toggle:checked ~ .content{
+  background-color: #4c4a4a;
   color: #E0E0E0;
 }
 
+#dark-mode-toggle:checked ~ section{
+  background-color: #4c4a4a;
+  color: #E0E0E0;
+}
+
+#dark-mode-toggle:checked ~ body::after {
+  background-color: #121212 !important;
+}
 
 header1{
   text-align: center;
@@ -91,13 +99,15 @@ header1{
   font-size: 20px;
 }
 
+
 body {
+  background-color: aliceblue;
   margin-top: 80px;
 }
 
 
 @media screen and (max-width: 768px) {
-  .navigation ul {
+  .leftnavigation ul {
       flex-wrap: wrap;
       justify-content: center;
   }
