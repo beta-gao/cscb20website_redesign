@@ -53,6 +53,12 @@ html, body {
   border-radius: 5px;
 }
 
+#dark-mode-toggle:checked ~ .leftnavigation ul li a:hover{
+  background-color: rgb(196, 194, 199);
+  color: #1b1919;
+  border-radius: 5px;
+}
+
 .content, section {
   margin: 0;
   padding: 20px;
@@ -102,6 +108,11 @@ html, body {
   color: #fff
 }
 
+#dark-mode-toggle:checked ~ .leftnavigation span{
+  background: rgb(196, 194, 199);
+  color: #1b1919
+}
+
 /* ✅ 修正 Dark Mode 作用整个网页 */
 #dark-mode-toggle:checked ~ * {
   background-color: #121212; /* 改变整个页面背景 */
@@ -141,6 +152,11 @@ body {
   background-color: aliceblue;
   z-index: -1;
   transition: 0.5s;
+}
+
+#dark-mode-toggle:checked ~ .dark-mode-label {
+  background: rgb(196, 194, 199);
+  color: #1b1919
 }
 
 input:checked + label + .background1 + .background2{

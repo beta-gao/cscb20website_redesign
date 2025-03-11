@@ -53,6 +53,12 @@ html, body {
   border-radius: 5px;
 }
 
+#dark-mode-toggle:checked ~ .leftnavigation ul li a:hover{
+    background-color: rgb(196, 194, 199);
+    color: #1b1919;
+    border-radius: 5px;
+  }
+
 .content, section {
   margin: 0;
   padding: 20px;
@@ -79,10 +85,21 @@ html, body {
   z-index: 2000; /* 确保按钮在最上层 */
 }
 
+#dark-mode-toggle:checked ~ .dark-mode-label {
+    background: rgb(196, 194, 199);
+    color: #1b1919
+}
+
 /* ✅ 悬停时颜色变化 */
 .dark-mode-label:hover {
   background-color: #004488;
 }
+
+#dark-mode-toggle:checked ~ .content .leftnavigation ul li a:hover{
+    background-color: rgb(196, 194, 199);
+    color: #1b1919;
+    border-radius: 5px;
+  }
 
 .leftnavigation span, .leftnavigation a {
   padding: 3px 15px 4px
@@ -94,6 +111,11 @@ html, body {
 
 #dark-mode-toggle:checked ~ .content .leftnavigation {
     background-color:  #1E1E1E;
+}
+
+#dark-mode-toggle:checked ~ .content .leftnavigation span{
+    background: rgb(196, 194, 199);
+    color: #1b1919
 }
 
 input:checked + label{
@@ -155,14 +177,24 @@ body {
 }
 
 
-header {
-  text-align: center;
-  font-family: "Georgia", serif;
-  font-size: 16px;
-  margin-top: 80px; /* 确保它不会被导航栏挡住 */
-  padding: 20px; /* 增加一些内边距，让标题更突出 */
-  color: cadetblue;
+.content .lectures-header {
+    text-align: center;
+    background-color: aliceblue;
+    color: rgb(114, 95, 160);
+    font-family: "Georgia", serif;
+    font-size: 22px;
+    margin-top: 100px; /* 确保不会被导航栏遮挡 */
+    padding: 20px;
+    border-bottom: 3px solid #003366;
 }
+
+/* ✅ Dark Mode 适配 */
+#dark-mode-toggle:checked ~ .content.lectures-header {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border-bottom: 3px solid #FFD700;
+}
+
 
 #dark-mode-toggle:checked ~ section{
     color:#DDD;
@@ -261,6 +293,12 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+#dark-mode-toggle:checked ~ .content .lectures-header {
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+    border-bottom: 2px solid #FFD700;
 }
 
 
