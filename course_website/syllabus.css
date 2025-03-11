@@ -19,11 +19,28 @@ body {
 /* ===================
    2. 内容区 + 粘性页脚
    =================== */
-.content {
+.pdf-links {
     flex: 1;
     padding: 20px;
     background-color: aliceblue;
 }
+
+.pdf-links {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.pdf-links a {
+    font-size: 18px;
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pdf-links a:hover {
+    text-decoration: underline;
+}
+
 
 footer {
     text-align: center;
