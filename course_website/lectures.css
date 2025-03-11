@@ -92,6 +92,42 @@ html, body {
   color: #fff
 }
 
+#dark-mode-toggle:checked ~ .content .leftnavigation {
+    background-color:  #1E1E1E;
+}
+
+input:checked + label{
+    background: #242424;
+  }
+  input{
+    display: none;
+  }
+
+body {
+    background-color: aliceblue;
+    margin-top: 80px;
+  }
+
+/* ✅ Dark Mode 让表格背景变黑 */
+#dark-mode-toggle:checked ~ .content table {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border-color: #888;
+}
+
+/* ✅ Dark Mode 让表头变暗 */
+#dark-mode-toggle:checked ~ .content table th {
+    background-color: #444;
+    color: #FFF;
+}
+
+/* ✅ Dark Mode 让表格单元格变色 */
+#dark-mode-toggle:checked ~ .content table td {
+    background-color: #222;
+    color: #DDD;
+    border-color: #555;
+}
+
 /* ✅ 修正 Dark Mode 作用整个网页 */
 #dark-mode-toggle:checked ~ * {
   background-color: #121212; /* 改变整个页面背景 */
@@ -128,6 +164,11 @@ header {
   color: cadetblue;
 }
 
+#dark-mode-toggle:checked ~ section{
+    color:#DDD;
+    background-color: #4c4a4a;
+}
+
 /* ✅ 让表格居中，并自适应宽度 */
 table {
     width: 90%; /* 让表格尽量填充页面 */
@@ -159,6 +200,7 @@ table {
     text-align: center; /* 让所有列居中 */
     padding: 10px; /* 让内容有内边距 */
     border: 1px solid #003366; /* 让所有单元格有边框 */
+    font-family:sans-serif;
   }
   
   /* ✅ 让表头有背景色 */
