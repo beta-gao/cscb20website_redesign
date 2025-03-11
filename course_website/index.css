@@ -170,25 +170,21 @@ html, body {
 
 
 
-/* ✅ 页脚样式 */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
 footer {
   text-align: center;
   background-color: #003366;
   color: white;
   font-size: 14px;
   width: 100%;
-  padding: 15px 0; 
-  position: relative; /* 避免覆盖内容 */
+  padding: 15px 0;
+  flex-shrink: 0;
 }
 
-/* ✅ 让页脚在滚动到底部时可见 */
-body:has(footer):after {
-  content: "";
-  display: block;
-  height: 150px; /* 预留空间，确保滚动到底部 */
-}
-
-/* ✅ 链接样式 */
 footer a {
   color: #FFD700;
   text-decoration: none;

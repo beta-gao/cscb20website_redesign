@@ -1,0 +1,159 @@
+/* ===================
+   1. 基础设置
+   =================== */
+   html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Georgia", serif;
+    background-color: aliceblue;
+}
+
+body {
+    padding-top: 80px;
+}
+
+/* ===================
+   2. 内容区 + 粘性页脚
+   =================== */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+footer {
+    text-align: center;
+    background-color: #003366;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    padding: 15px 0;
+    flex-shrink: 0;
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===================
+   3. 导航栏
+   =================== */
+.leftnavigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003366;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.leftnavigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 80%;
+    text-align: center;
+}
+
+.leftnavigation ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.leftnavigation ul li a:hover {
+    color: #FFD700;
+    background-color: #004488;
+    border-radius: 5px;
+}
+
+.leftnavigation span, .leftnavigation a {
+    padding: 3px 15px 4px;
+}
+.leftnavigation span {
+    background: rgb(114, 95, 160);
+    color: #fff;
+}
+
+/* ===================
+   4. 暗黑模式
+   =================== */
+#dark-mode-toggle {
+    display: none;
+}
+
+.dark-mode-label {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #0055AA;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 2000;
+}
+
+.dark-mode-label:hover {
+    background-color: #004488;
+}
+
+#dark-mode-toggle:checked ~ * {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+#dark-mode-toggle:checked ~ .leftnavigation {
+    background-color: #4c4a4a;
+}
+
+#dark-mode-toggle:checked ~ .content {
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+}
+
+/* ===================
+   5. 头部样式
+   =================== */
+header {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: cadetblue;
+    background-color: aliceblue;
+}
+
+/* ===================
+   6. 响应式设计
+   =================== */
+@media screen and (max-width: 768px) {
+    .leftnavigation ul {
+        flex-direction: column;
+    }
+    .leftnavigation ul li a {
+        font-size: 16px;
+    }
+}
