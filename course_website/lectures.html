@@ -10,70 +10,93 @@
 <div class="background1"></div>
 
 <body>
-    <div class="leftnavigation">
-        <ul>
-            <li><a href="index.html">Home 🏠</a></li>
-            <li><a href="syllabus.html">Syllabus🚀</a></li>
-            <li><a href="calendar.html">Calendar🗓️</a></li>
-            <li><a href="https://piazza.com/class/m5fmz9kzjo83yk">Piazza💡</a></li>
-            <li><a href="markus.html">Markus🗂️</a></li>
-            <li><a href="lectures.html"><span>Lectures👩‍🏫</span></a></li>
-            <li><a href="labs.html">Labs👩‍💻</a></li>
-            <li><a href="assignments.html">Assignments✍️</a></li>
-            <li><a href="resources.html">Course Team🙋‍♀️🙋‍♀️</a></li>
-            <li><a href="anon_feedback.html">Anon Feedback😉</a></li>
-        </ul>
-    </div>
+    <div class="content">
+        <div class="leftnavigation">
+            <ul>
+                <li><a href="index.html">Home 🏠</a></li>
+                <li><a href="syllabus.html">Syllabus🚀</a></li>
+                <li><a href="calendar.html">Calendar🗓️</a></li>
+                <li><a href="https://piazza.com/class/m5fmz9kzjo83yk">Piazza💡</a></li>
+                <li><a href="markus.html">Markus🗂️</a></li>
+                <li><a href="lectures.html"><span>Lectures👩‍🏫</span></a></li>
+                <li><a href="labs.html">Labs👩‍💻</a></li>
+                <li><a href="assignments.html">Assignments✍️</a></li>
+                <li><a href="resources.html">Course Team🙋‍♀️🙋‍♀️</a></li>
+                <li><a href="anon_feedback.html">Anon Feedback😉</a></li>
+            </ul>
+        </div>
+        <header>
+            <h1>CSC B20 &mdash; Lecture Materials</h1>
+        </header>
+        
+        <table>
+            <tr>
+                <th width="46">Week</th>
+                <th width="160">Topic</th>
+                <th width="120">Lecture Material</th>
+                <th width="90">In Class</th>
+                <th width="120">Reading and Resources</th></tr>
+            <tr>
+        <td>Jan 6-10</td>
+        <td>
+            Introduction
+        </td>
+        <td>
+            <div class="pdf-links">
+                <a href = "pdfs/Week 0 Lecture Notes.pdf" target="_blank">Week0 Lecture Notes</a>
+            </div>
+        </td>
+        <td>
 
-    <header>
-        <h1>CSC B20 &mdash; Lecture Materials</h1>
-    </header>
+        </td>
+        <td>
 
-    <table>
+        </td>
+        </tr>
         <tr>
-            <th width="46">Week</th>
-            <th width="160">Topic</th>
-            <th width="108">Lecture Material</th>
-            <th width="108">In Class</th>
-            <th width="108">Reading and Resources</th></tr>
-        <tr>
-      <td>Jan 6-10</td>
-      <td>
-        Introduction
-      </td>
-      <td>
-        <a href = "pdfs/Week 0 Lecture Notes.pdf" target="_blank">Week0 Lecture notes</a>
-      </td>
-      <td>
-
-      </td>
-      <td>
-
-      </td>
-    </tr>
-    <tr>
-      <td>Jan 13-17</td>
-      <td>
+        <td>Jan 13-17</td>
+        <td>
         Relational Algebra
       </td>
       <td>
-        <a href = "pdfs/Week 1 - Relational Algebra.pdf" target="_blank">Week1 Lecture notes</a>
+        <div class="pdf-links">
+            <a href = "pdfs/Week 1 - Relational Algebra.pdf">Week1 Lecture Notes</a>
+        </div>
       </td>
       <td>
-        <ul>
-            <li><a href = "pdfs/Week 1 worksheet.pdf" target="_blank">Week1 Worksheet</a></li>
-            <li><a href = "https://q.utoronto.ca/courses/372797/files/35832917?wrap=1">Week1 Worksheet Solution</a></li>
-            <li><a href = "https://q.utoronto.ca/courses/372797/files/35448793/download?download_frd=1">Week1 Worksheet Solution(handwritten)</a></li>
-        </ul>
+        <div class="pdf-links">
+            <a href = "pdfs/Week 1 worksheet.pdf">Week1 Worksheet</a>
+            <a href = "pdfs/Week 1 worksheet solution.pdf">Week1 Worksheet Solution</a>
+            <a href = "pdfs/Week 1 worksheet solution (handwritten).pdf">Week1 Worksheet Solution(handwritten)</a>
+        </div>
       </td>
       <td>
-        <a href = "https://dbis-uibk.github.io/relax/calc/local/uibk/local/0">Relational Algebra Calculator</a>
+        <div class="pdf-links">
+            <a href = "https://dbis-uibk.github.io/relax/calc/local/uibk/local/0">Relational Algebra Calculator</a>
+        </div>
       </td>
         </tr>
         <tr>
       <td>Jan 20-24</td>
       <td>
         Wrapping up Relational Algebra and starting with SQL
+      </td>
+      <td>
+        <div class="pdf-links">
+            <a href ="pdfs/Week 2 -  RA and Introduction to SQL.pdf">Week2 Lecture Notes</a>
+        </div>
+      </td>
+      <td>
+        <div class="pdf-links">
+            <a href = "pdfs/ReLax_query_examples_inclass_week2.txt">ReLax query examples inclass</a>
+            <a href ="pdfs/univdb-sqlite.db">Database we are working with</a>
+        </div>
+      </td>
+      <td>
+        <div class="pdf-links">
+            <a href ="https://www.sqlite.org/index.html">SQLite download link</a>
+            <a href ="https://sqlitebrowser.org/">Browser Option for Sqlite</a>
+        </div>
       </td>
         </tr>
         <tr>
@@ -121,15 +144,8 @@
         <tr>
       <td>Mar 17-21</td>
       <td>
-  <!--	  <ul>
-          <li>Tutorial material on <a href="content/week10/tutorial08.pdf">amortised complexity</a></li>
-          <li>Fibonacci heaps pre-lecture <a href="content/week10/w10_fibonacci_pre.pdf">slides</a></li>
-          <li>Fibonacci heaps post-lecture <a href="content/week10/w10_fibonacci_post.pdf">slides</a></li>
-          <li>A <a href="http://www.growingwiththeweb.com/data-structures/fibonacci-heap/overview/">nice
-          resource</a> for basic operations on Fibonacci Heaps</li>
-          <li>CLRS Chapter from 3rd edition on <a href="content/week10/clrs_fibonacci_chapter.pdf">Fibonacci Heaps</a></li>
-        </ul>
-  -->	</td>
+
+      </td>
         </tr>
         <tr>
       <td>Mar 24-28</td>
@@ -154,6 +170,14 @@
         </ul>
   -->	</td>
         </tr>
-      </table>
+      
+    </table>
+
+    </div>
+    <footer>
+        <p>© 2025 CSCB20 Course Website | <a href="https://web.cs.toronto.edu/">Faculty of Computer Science at UofT</a></p>
+        <p>Site design by Shuqing Tu and Yiqin Gao</p>
+    </footer>
+
 </body>
 </html>

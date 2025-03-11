@@ -136,6 +136,23 @@ table {
     border-collapse: collapse; /* 让单元格边框合并 */
     border: 2px solid #003366; /* 添加外框 */
   }
+
+  ul {
+    list-style: none;
+    text-align: center; 
+  }
+
+  .pdf-links {
+    text-align: center; /* 让内部文字居中 */
+}
+
+.pdf-links a {
+    display: block; /* 让每个链接占据整行 */
+    margin: 10px auto; /* 自动居中 */
+    font-family: 'Times New Roman', Times, serif;
+    color:cadetblue
+}
+
   
   /* ✅ 让所有单元格都有边框 */
   table th, table td {
@@ -160,6 +177,51 @@ table {
   table td:nth-child(5) {
     text-align: center; /* 居中对齐 */
   }
+
+  /* ✅ 让 body 占满整个屏幕 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ 让主要内容区域填充剩余空间 */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* ✅ 页脚样式 */
+footer {
+    text-align: center;
+    background-color: #003366;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    padding: 15px 0; 
+    position: relative; /* 避免覆盖内容 */
+}
+
+/* ✅ 让页脚在滚动到底部时可见 */
+body:has(footer):after {
+    content: "";
+    display: block;
+    height: 150px; /* 预留空间，确保滚动到底部 */
+}
+
+/* ✅ 链接样式 */
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
   
   /* 📌 响应式优化 */
   @media screen and (max-width: 768px) {
