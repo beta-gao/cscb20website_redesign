@@ -19,8 +19,8 @@ html, body {
   background-color: #003366;
   font-family: "Georgia", serif;
   padding: 15px 0;
-  height: var(--nav-height); /* 适配屏幕高度 */
-  width: 100%; /* 占满屏幕宽度 */
+  height: var(--nav-height); 
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -139,13 +139,12 @@ input:checked + label{
     color: rgb(114, 95, 160);
     font-family: "Georgia", serif;
     font-size: 22px;
-    margin-top: var(--nav-height); /* 直接使用导航栏高度 */ 
+    margin-top: var(--nav-height); 
     padding: 20px;
     border-bottom: 2px solid #003366;
     max-width: 100%;
     box-sizing: border-box;
   }
-/* ✅ 课程页面主体 */
 .lectures-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

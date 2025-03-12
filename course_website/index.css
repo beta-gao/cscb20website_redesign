@@ -1,17 +1,26 @@
 html {
-  font-size:100.01%;
-  margin:2%;
+  font-size: 100.01%;
+  margin: 2%;
 }
 html, body {
-  height:100%;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  height: 100%;
 }
 
-html, body {
-  overflow-x: hidden;
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex: 1;
 }
 
-
-/* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
   display: flex;
   justify-content: center;
@@ -19,14 +28,13 @@ html, body {
   background-color: #003366;
   font-family: "Georgia", serif;
   padding: 15px 0;
-  height: var(--nav-height); /* 适配屏幕高度 */
-  width: 100%; /* 占满屏幕宽度 */
+  height: var(--nav-height);
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
 }
-
 
 .leftnavigation ul {
   list-style: none;
@@ -39,7 +47,6 @@ html, body {
   max-width: 80%;
   text-align: center;
 }
-
 
 .leftnavigation ul li {
   position: relative;
@@ -70,38 +77,27 @@ html, body {
   color: rgb(114, 95, 160);
   font-family: "Georgia", serif;
   font-size: 22px;
-  margin-top: var(--nav-height); /* 直接使用导航栏高度 */
+  margin-top: var(--nav-height);
   padding: 20px;
   border-bottom: 2px solid #003366;
   max-width: 100%;
   box-sizing: border-box;
 }
 
+#dark-mode-toggle {
+  display: none;
+}
 
-#dark-mode-toggle:checked ~ .leftnavigation ul li a:hover{
+#dark-mode-toggle:checked ~ .leftnavigation ul li a:hover {
   background-color: rgb(196, 194, 199);
   color: #1b1919;
   border-radius: 5px;
 }
 
-.content, section {
-  margin: 0;
-  padding: 20px;
-  max-width: 100%;  
-  box-sizing: border-box; 
-}
-
-
-
-
 #dark-mode-toggle:checked ~ .course-title {
   background-color: #4c4a4a;
   color: #E0E0E0;
   border-bottom: 2px solid #FFD700;
-}
-
-#dark-mode-toggle {
-  display: none;
 }
 
 .dark-mode-label {
@@ -123,18 +119,18 @@ html, body {
 }
 
 .leftnavigation span, .leftnavigation a {
-  padding: 3px 15px 4px
+  padding: 3px 15px 4px;
 }
 .leftnavigation span {
   background: rgb(114, 95, 160);
   color: #fff;
-  border-radius : 5px;
+  border-radius: 5px;
 }
 
-#dark-mode-toggle:checked ~ .leftnavigation span{
+#dark-mode-toggle:checked ~ .leftnavigation span {
   background: rgb(196, 194, 199);
   color: #1b1919;
-  border-radius : 5px;
+  border-radius: 5px;
 }
 
 #dark-mode-toggle:checked ~ * {
@@ -146,12 +142,12 @@ html, body {
   background-color: #1E1E1E;
 }
 
-#dark-mode-toggle:checked ~ .content{
+#dark-mode-toggle:checked ~ .content {
   background-color: #4c4a4a;
   color: #E0E0E0;
 }
 
-#dark-mode-toggle:checked ~ section{
+#dark-mode-toggle:checked ~ section {
   background-color: #4c4a4a;
   color: #E0E0E0;
 }
@@ -160,58 +156,35 @@ html, body {
   background-color: #121212 !important;
 }
 
-
-body {
-  background-color: aliceblue;
-  margin-top: 80px;
-  max-width: 100%;  
-  box-sizing: border-box; 
-}
-
 #dark-mode-toggle:checked ~ .dark-mode-label {
   background: rgb(196, 194, 199);
-  color: #1b1919
+  color: #1b1919;
 }
 
-input:checked + label + .background1 + .background2{
+input:checked + label + .background1 + .background2 {
   background: #242424;
 }
-input{
+input {
   display: none;
 }
-
-html, body {
-  min-height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  max-width: 100%;  
-  box-sizing: border-box; 
-}
-
-.extra-space {
-  flex-grow: 1;
-}
-
 
 footer {
   text-align: center;
   background-color: #003366;
   color: white;
-  font-size: 14px;
+  font-size: 1rem;
   width: 100%;
   padding: 15px 0;
-  flex-shrink: 0;
+  position: relative;
 }
 
-#dark-mode-toggle:checked ~ footer{
+@media screen and (max-width: 768px) {
+  footer {
+    font-size: 0.875rem;
+  }
+}
+
+#dark-mode-toggle:checked ~ footer {
   background-color: #1b1919;
 }
 
@@ -219,7 +192,6 @@ footer a {
   color: #FFD700;
   text-decoration: none;
 }
-
 footer a:hover {
   text-decoration: underline;
 }
@@ -237,26 +209,30 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
   }
+  table {
+    width: 95%;
+  }
 }
 
 .welcome-banner {
   width: 100%;
   text-align: center;
   padding: 40px 20px;
-  background: #f0f4ff; 
+  background: #f0f4ff;
   color: #003366;
   font-family: "Georgia", serif;
   font-size: 22px;
   font-weight: bold;
   border-bottom: 2px solid #003366;
-  max-width: 100%;  
-  box-sizing: border-box; 
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .container {
   column-count: 3;
   column-gap: 20px;
   padding: 20px;
+  flex: 1;
 }
 
 .card {
@@ -268,8 +244,9 @@ footer a:hover {
   border-radius: 12px;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  max-width: 100%;  
-  box-sizing: border-box; 
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 .card:hover {
@@ -277,12 +254,8 @@ footer a:hover {
   box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
 }
 
-.card a{
-  color:cadetblue;
-}
-
-.card {
-    font-family: "Helvetica Neue", Arial, sans-serif;
+.card a {
+  color: cadetblue;
 }
 
 #dark-mode-toggle:checked ~ .container .card {
@@ -292,7 +265,7 @@ footer a:hover {
 
 #dark-mode-toggle:checked ~ .welcome-banner {
   background-color: #1E1E1E;
-  color:darkkhaki;
+  color: darkkhaki;
   border-bottom: 2px solid #FFD700;
 }
 

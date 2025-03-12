@@ -1,28 +1,23 @@
-html {
-  font-size: 100%;
-  margin: 0;  /* 取消 2% 的 margin */
-  padding: 0;
-}
 html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
   min-height: 100vh;
-  margin: 0;
+  font-size: 100%;
+  font-family: "Georgia", serif;
+  background-color: aliceblue; 
   display: flex;
   flex-direction: column;
-  font-family: "Georgia", serif;
 }
 
-
-/* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #003366;
-  font-family: "Georgia", serif;
   padding: 15px 0;
-  height: var(--nav-height); /* 适配屏幕高度 */
-  width: 100%; /* 占满屏幕宽度 */
+  height: var(--nav-height);
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -38,11 +33,6 @@ html, body {
   justify-content: center;
   gap: 15px;
   max-width: 80%;
-  text-align: center;
-}
-
-.leftnavigation ul li {
-  position: relative;
 }
 
 .leftnavigation ul li a {
@@ -51,7 +41,7 @@ html, body {
   color: white;
   text-decoration: none;
   font-size: 20px;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .leftnavigation ul li a:hover {
@@ -59,6 +49,7 @@ html, body {
   background-color: #004488;
   border-radius: 5px;
 }
+
 :root {
   --nav-height: 20vh;
 }
@@ -67,48 +58,22 @@ html, body {
   text-align: center;
   background-color: aliceblue;
   color: rgb(114, 95, 160);
-  font-family: "Georgia", serif;
   font-size: 22px;
-  margin-top: var(--nav-height); /* 直接使用导航栏高度 */ 
+  margin-top: var(--nav-height);
   padding: 20px;
   border-bottom: 2px solid #003366;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 .content, section {
-  margin: 0;
   padding: 20px;
   flex-grow: 1;
+  flex:1;
 }
 
-/* ✅ 让 Dark Mode 按钮正确显示 */
 #dark-mode-toggle {
   display: none;
 }
-#dark-mode-toggle:checked ~ .course-title {
-    background-color: #4c4a4a;
-    color: #E0E0E0;
-    border-bottom: 2px solid #FFD700;
-  }
 
-  #dark-mode-toggle:checked ~ .dark-mode-label {
-    background: rgb(196, 194, 199);
-    color: #1b1919
-  }
-    
-  #dark-mode-toggle:checked ~ .leftnavigation span{
-    background: rgb(196, 194, 199);
-    color: #1b1919
-  }
-    
-    #dark-mode-toggle:checked ~ .leftnavigation ul li a:hover{
-      background-color: rgb(196, 194, 199);
-      color: #1b1919;
-      border-radius: 5px;
-    }
-
-/* ✅ Dark Mode 按钮样式 */
 .dark-mode-label {
   position: fixed;
   top: 15px;
@@ -127,16 +92,8 @@ html, body {
   background-color: #004488;
 }
 
-.leftnavigation span, .leftnavigation a {
-  padding: 3px 15px 4px;
-}
-.leftnavigation span {
-  background: rgb(114, 95, 160);
-  color: #fff;
-}
-
-/* ✅ 修正 Dark Mode 作用整个网页 */
-#dark-mode-toggle:checked ~ * {
+#dark-mode-toggle:checked ~ html,
+#dark-mode-toggle:checked ~ body {
   background-color: #121212;
   color: #E0E0E0;
 }
@@ -145,31 +102,23 @@ html, body {
   background-color: #1e1e1e;
 }
 
+#dark-mode-toggle:checked ~ .course-title,
 #dark-mode-toggle:checked ~ .content,
 #dark-mode-toggle:checked ~ section {
   background-color: #4c4a4a;
   color: #E0E0E0;
+  border-bottom: 2px solid #FFD700;
 }
 
-#dark-mode-toggle:checked ~ body::after {
-  background-color: #121212 !important;
+#dark-mode-toggle:checked ~ footer {
+  background-color: #121212; 
+  color: #E0E0E0; 
 }
 
-
-.background1, .background2{
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background-color: aliceblue;
-  z-index: -1;
-  transition: 0.5s;
-}
-
-input:checked + label + .background1 + .background2{
-  background: #242424;
-}
-input {
-  display: none;
+#dark-mode-toggle:checked ~ .leftnavigation ul li a:hover {
+  background-color: rgb(196, 194, 199);
+  color: #1b1919;
+  border-radius: 5px;
 }
 
 .extra-space {

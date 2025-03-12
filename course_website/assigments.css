@@ -1,7 +1,6 @@
-/* ✅ 全局基础样式 */
 html {
     font-size: 100%;
-    margin: 0;  /* 取消 2% 的 margin */
+    margin: 0;  
     padding: 0;
 }
 
@@ -28,8 +27,8 @@ html, body {
     background-color: #003366;
     font-family: "Georgia", serif;
     padding: 15px 0;
-    height: var(--nav-height); /* 适配屏幕高度 */
-    width: 100%; /* 占满屏幕宽度 */
+    height: var(--nav-height); 
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -95,16 +94,13 @@ html, body {
     color: rgb(114, 95, 160);
     font-family: "Georgia", serif;
     font-size: 22px;
-    margin-top: var(--nav-height); /* 直接使用导航栏高度 */ 
-    padding: 20px;
+    margin-top: var(--nav-height);
     border-bottom: 2px solid #003366;
     max-width: 100%;
     box-sizing: border-box;
 }
 
 
-
-/* ✅ Dark Mode 下的导航栏 */
 #dark-mode-toggle:checked ~ .leftnavigation {
     background-color: #1E1E1E;
 }
@@ -184,7 +180,6 @@ footer a:hover {
     }
 }
 
-/* ✅ Dark Mode 下的 Labs 标题 */
 #dark-mode-toggle:checked ~ .assignment-header {
     background-color: #4c4a4a;
     color: #E0E0E0;

@@ -12,9 +12,6 @@ html, body {
   flex: 1;
 }
 
-
-  
-/* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
   display: flex;
   justify-content: center;
@@ -22,8 +19,8 @@ html, body {
   background-color: #003366;
   font-family: "Georgia", serif;
   padding: 15px 0;
-  height: var(--nav-height); /* 适配屏幕高度 */
-  width: 100%; /* 占满屏幕宽度 */
+  height: var(--nav-height); 
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -35,11 +32,11 @@ html, body {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* 让菜单项并排 */
-    flex-wrap: wrap; /* 允许换行 */
-    justify-content: center; /* 居中对齐 */
-    gap: 15px; /* 调整菜单项间距 */
-    max-width: 80%; /* 让导航栏不会太宽 */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+    max-width: 80%; 
     text-align: center;
   }
   
@@ -85,7 +82,7 @@ html, body {
     color: rgb(114, 95, 160);
     font-family: "Georgia", serif;
     font-size: 22px;
-    margin-top: var(--nav-height); /* 直接使用导航栏高度 */
+    margin-top: var(--nav-height); 
     padding: 20px;
     border-bottom: 2px solid #003366;
     max-width: 100%;
@@ -97,7 +94,7 @@ html, body {
     color: #E0E0E0;
     border-bottom: 2px solid #FFD700;
 }
-/* 📌 图片展示区域 */
+
 .image-gallery {
     display: flex;
     flex-direction: column;
@@ -180,17 +177,14 @@ html, body {
 }
 
 
-  
-  /* ✅ 让 Dark Mode 按钮正确显示 */
   #dark-mode-toggle {
     display: none;
   }
-  
-  /* ✅ Dark Mode 按钮样式 */
+
   .dark-mode-label {
     position: fixed;
-    top: 15px;  /* 确保按钮在导航栏上面 */
-    right: 20px; /* 靠右 */
+    top: 15px; 
+    right: 20px;
     padding: 10px 20px;
     background-color: #0055AA;
     color: white;
@@ -198,10 +192,9 @@ html, body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    z-index: 2000; /* 确保按钮在最上层 */
+    z-index: 2000;
   }
-  
-  /* ✅ 悬停时颜色变化 */
+
   .dark-mode-label:hover {
     background-color: #004488;
   }
@@ -218,19 +211,17 @@ html, body {
     background: rgb(196, 194, 199);
     color: #1b1919
   }
-  
-  /* ✅ 修正 Dark Mode 作用整个网页 */
+
   #dark-mode-toggle:checked ~ * {
-    background-color: #121212; /* 改变整个页面背景 */
-    color: #E0E0E0; /* 文字变亮 */
+    background-color: #121212; 
+    color: #E0E0E0; 
   }
   
-  /* ✅ Dark Mode 影响导航栏 */
+
   #dark-mode-toggle:checked ~ .leftnavigation {
     background-color:#1E1E1E;
   }
   
-  /* ✅ Dark Mode 影响内容区 */
   #dark-mode-toggle:checked ~ .content{
     background-color: #4c4a4a;
     color: #E0E0E0;
@@ -290,7 +281,7 @@ html, body {
     text-decoration: underline;
   }
   
-  @media screen and (max-width: 1024px) { /* 适配平板等中等屏幕 */
+  @media screen and (max-width: 1024px) { 
     .leftnavigation ul {
       flex-wrap: wrap;
       justify-content: center;
@@ -298,9 +289,9 @@ html, body {
     }
   }
   
-  @media screen and (max-width: 768px) { /* 适配手机 */
+  @media screen and (max-width: 768px) { 
     .leftnavigation ul {
-      flex-direction: column; /* 垂直排列 */
+      flex-direction: column; 
       align-items: center;
     }
   }

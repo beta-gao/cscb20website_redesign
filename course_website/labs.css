@@ -1,8 +1,8 @@
 html {
     font-size:100.01%;
     margin:2%;
-  }
-  html, body {
+}
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -11,9 +11,8 @@ html {
 }
 
 .content {
-    flex: 1; /* 让内容区填充剩余空间 */
+    flex: 1; 
     padding: 20px;
-    min-height: calc(100vh - 120px);
 }
 
 .leftnavigation {
@@ -35,11 +34,11 @@ html {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* 让菜单项并排 */
-    flex-wrap: wrap; /* 允许换行 */
-    justify-content: center; /* 居中对齐 */
-    gap: 15px; /* 调整菜单项间距 */
-    max-width: 80%; /* 让导航栏不会太宽 */
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+    max-width: 80%;
     text-align: center;
   }
   
@@ -79,7 +78,7 @@ html {
     color: rgb(114, 95, 160);
     font-family: "Georgia", serif;
     font-size: 22px;
-    margin-top: var(--nav-height); /* 直接使用导航栏高度 */
+    margin-top: var(--nav-height);
     padding: 20px;
     border-bottom: 2px solid #003366;
     max-width: 100%;
@@ -91,17 +90,14 @@ html {
     padding: 20px;
   }
   
-  
-  /* ✅ 让 Dark Mode 按钮正确显示 */
   #dark-mode-toggle {
     display: none;
   }
-  
-  /* ✅ Dark Mode 按钮样式 */
+
   .dark-mode-label {
     position: fixed;
-    top: 15px;  /* 确保按钮在导航栏上面 */
-    right: 20px; /* 靠右 */
+    top: 15px;  
+    right: 20px; 
     padding: 10px 20px;
     background-color: #0055AA;
     color: white;
@@ -109,10 +105,9 @@ html {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    z-index: 2000; /* 确保按钮在最上层 */
+    z-index: 2000; 
   }
-  
-  /* ✅ 悬停时颜色变化 */
+
   .dark-mode-label:hover {
     background-color: #004488;
   }
@@ -152,8 +147,7 @@ body {
   #dark-mode-toggle:checked ~ .leftnavigation {
     background-color:  #121212;
   }
-  
-  /* ✅ Dark Mode 影响内容区 */
+
   #dark-mode-toggle:checked ~ .background{
     background-color: #4c4a4a;
     color: #E0E0E0;
@@ -177,7 +171,6 @@ body {
     flex-direction: column;
 }
 
-  /* ✅ 页脚样式 */
   footer {
     text-align: center;
     background-color: #003366;
@@ -185,17 +178,16 @@ body {
     font-size: 14px;
     width: 100%;
     padding: 15px 0;
-    position: relative; /* 避免覆盖内容 */
+    position: relative; 
 }
 
-/* ✅ 让页脚在滚动到底部时可见 */
+
 body:has(footer):after {
     content: "";
     display: block;
-    height: 150px; /* 预留空间，确保滚动到底部 */
+    height: 150px; 
 }
 
-/* ✅ 链接样式 */
 footer a {
     color: #FFD700;
     text-decoration: none;
@@ -213,18 +205,17 @@ footer a:hover {
 
 @media screen and (max-width: 768px) {
     table {
-      width: 100%; /* 在小屏幕上填满 */
+      width: 100%; 
     }
     table th, table td {
-      padding: 8px; /* 减少 padding，避免单元格过大 */
-      font-size: 14px; /* 字体变小 */
+      padding: 8px; 
+      font-size: 14px;
     }
   }
   
-  /* 📌 响应式优化 */
   @media screen and (max-width: 768px) {
     table {
-      width: 95%; /* 在小屏幕上让表格更窄 */
+      width: 95%;
     }
   }
 
@@ -269,7 +260,6 @@ footer a:hover {
     background-color: #004488;
 }
 
-/* ✅ Dark Mode 背景切换 */
 #dark-mode-toggle:checked ~ .background {
     background-color: #4c4a4a;
     color: #E0E0E0;
@@ -280,12 +270,11 @@ footer a:hover {
     color: #E0E0E0;
 }
 
-/* ✅ 让实验卡片在 Dark Mode 下变色 */
 #dark-mode-toggle:checked ~ .labs-container .lab-card {
-    background-color: #2E2E2E; /* 深灰色，比背景稍亮 */
-    color: #E0E0E0; /* 文字颜色 */
+    background-color: #2E2E2E; 
+    color: #E0E0E0;
     
-    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.2); /* 增加轻微金色阴影 */
+    box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.2); 
 }
 
 
@@ -299,7 +288,6 @@ footer a:hover {
     color: #1b1919
 }
 
-/* ✅ Dark Mode 下的 Labs 标题 */
 #dark-mode-toggle:checked ~ .labs-header {
     background-color: #4c4a4a;
     color: #E0E0E0;
