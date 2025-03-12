@@ -132,35 +132,63 @@ body {
     margin-top: 80px;
   }
 
-/* ✅ Dark Mode 让表格背景变黑 */
-#dark-mode-toggle:checked ~ .content table {
-    background-color: #1E1E1E;
+/* ✅ 课程页面主体 */
+.lectures-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ✅ 每个 Week Card */
+.week-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.week-card:hover {
+    transform: scale(1.02);
+}
+
+/* ✅ 让特殊周（如 Reading Week）更明显 */
+.week-card.special {
+    background-color:#FFD700;
+    color: black;
+    text-align: center;
+}
+
+/* ✅ 让 Lecture Links 更好看 */
+.week-card a {
+    display: block;
+    padding: 5px 0;
+    color: #0055AA;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.week-card a:hover {
+    text-decoration: underline;
+}
+
+/* ✅ 适配 Dark Mode */
+#dark-mode-toggle:checked ~ .content .lectures-container .week-card {
+    background-color: #2E2E2E;
     color: #E0E0E0;
-    border-color: #888;
 }
 
-/* ✅ Dark Mode 让表头变暗 */
-#dark-mode-toggle:checked ~ .content table th {
-    background-color: #444;
-    color: #FFF;
+#dark-mode-toggle:checked ~ .content .lectures-container .week-card a {
+    color: #FFD700;
 }
-
-/* ✅ Dark Mode 让表格单元格变色 */
-#dark-mode-toggle:checked ~ .content table td {
-    background-color: #222;
-    color: #DDD;
-    border-color: #555;
-}
-
 /* ✅ 修正 Dark Mode 作用整个网页 */
 #dark-mode-toggle:checked ~ * {
   background-color: #121212; /* 改变整个页面背景 */
   color: #E0E0E0; /* 文字变亮 */
-}
-
-/* ✅ Dark Mode 影响导航栏 */
-#dark-mode-toggle:checked ~ .leftnavigation {
-  background-color:  #4c4a4a;
 }
 
 /* ✅ Dark Mode 影响内容区 */
@@ -187,14 +215,14 @@ body {
     font-size: 22px;
     margin-top: 100px; /* 确保不会被导航栏遮挡 */
     padding: 20px;
-    border-bottom: 3px solid #003366;
+    border-bottom: 2px solid #003366;
 }
 
 /* ✅ Dark Mode 适配 */
 #dark-mode-toggle:checked ~ .content.lectures-header {
     background-color: #1E1E1E;
     color: #E0E0E0;
-    border-bottom: 3px solid #FFD700;
+    border-bottom: 2px solid #FFD700;
 }
 
 
@@ -203,14 +231,6 @@ body {
     background-color: #4c4a4a;
 }
 
-/* ✅ 让表格居中，并自适应宽度 */
-table {
-    width: 90%; /* 让表格尽量填充页面 */
-    max-width: 1000px; /* 避免在大屏幕上太宽 */
-    margin: 20px auto; /* 居中显示 */
-    border-collapse: collapse; /* 让单元格边框合并 */
-    border: 2px solid #003366; /* 添加外框 */
-  }
 
   ul {
     list-style: none;
@@ -228,33 +248,6 @@ table {
     color:cadetblue
 }
 
-  
-  /* ✅ 让所有单元格都有边框 */
-  table th, table td {
-    text-align: center; /* 让所有列居中 */
-    padding: 10px; /* 让内容有内边距 */
-    border: 1px solid #003366; /* 让所有单元格有边框 */
-    font-family:sans-serif;
-  }
-  
-  /* ✅ 让表头有背景色 */
-  table th {
-    background-color: #003366; /* 让表头有深蓝色背景 */
-    color: white; /* 让表头文字变白 */
-    font-weight: bold;
-  }
-  
-  /* ✅ 让 Topic 列靠左 */
-  table td:nth-child(2) {
-    text-align: left; /* 让 Topic 列内容左对齐 */
-  }
-  
-  /* ✅ 让 Reading and Resources 列居中 */
-  table td:nth-child(5) {
-    text-align: center; /* 居中对齐 */
-  }
-
-  /* ✅ 让 body 占满整个屏幕 */
 html, body {
     height: 100%;
     margin: 0;
@@ -263,13 +256,11 @@ html, body {
     flex-direction: column;
 }
 
-/* ✅ 让主要内容区域填充剩余空间 */
 .content {
     flex: 1;
     padding: 20px;
 }
 
-/* ✅ 页脚样式 */
 footer {
     text-align: center;
     background-color: #003366;
@@ -280,14 +271,12 @@ footer {
     position: relative; /* 避免覆盖内容 */
 }
 
-/* ✅ 让页脚在滚动到底部时可见 */
 body:has(footer):after {
     content: "";
     display: block;
-    height: 150px; /* 预留空间，确保滚动到底部 */
+    height: 150px;
 }
 
-/* ✅ 链接样式 */
 footer a {
     color: #FFD700;
     text-decoration: none;

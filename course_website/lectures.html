@@ -28,233 +28,64 @@
                 <li><a href="anon_feedback.html">Anon Feedback😉</a></li>
             </ul>
         </div>
+        <!-- ✅ 课程页面标题 -->
         <header class="lectures-header">
             <h1>Lecture Materials</h1>
             <p>Here you can find all lecture notes, in-class activities, and resources.</p>
         </header>
-        <table>
-            <tr>
-                <th width="46">Week</th>
-                <th width="160">Topic</th>
-                <th width="120">Lecture Material</th>
-                <th width="90">In Class</th>
-                <th width="120">Reading and Resources</th></tr>
-            <tr>
-        <td>Jan 6-10</td>
-        <td>
-            Introduction
-        </td>
-        <td>
-            <div class="pdf-links">
-                <a href = "pdfs/Week 0 Lecture Notes.pdf" target="_blank">Week0 Lecture Notes</a>
+
+        <!-- ✅ 课程内容区（使用 CSS Grid 布局） -->
+        <div class="lectures-container">
+            <div class="week-card">
+                <h3>Jan 6-10</h3>
+                <p><strong>Topic:</strong> Introduction</p>
+                <a href="pdfs/Week 0 Lecture Notes.pdf">📄 Week0 Lecture Notes</a>
             </div>
-        </td>
-        <td>
 
-        </td>
-        <td>
+            <div class="week-card">
+                <h3>Jan 13-17</h3>
+                <p><strong>Topic:</strong> Relational Algebra</p>
+                <a href="pdfs/Week 1 - Relational Algebra.pdf">📄 Week1 Lecture Notes</a>
+                <a href="pdfs/Week 1 worksheet.pdf">📝 Week1 Worksheet</a>
+                <a href="pdfs/Week 1 worksheet solution.pdf">✅ Worksheet Solution</a>
+            </div>
 
-        </td>
-        </tr>
-        <tr>
-        <td>Jan 13-17</td>
-        <td>
-        Relational Algebra
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href = "pdfs/Week 1 - Relational Algebra.pdf">Week1 Lecture Notes</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href = "pdfs/Week 1 worksheet.pdf">Week1 Worksheet</a>
-            <a href = "pdfs/Week 1 worksheet solution.pdf">Week1 Worksheet Solution</a>
-            <a href = "pdfs/Week 1 worksheet solution (handwritten).pdf">Week1 Worksheet Solution(handwritten)</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href = "https://dbis-uibk.github.io/relax/calc/local/uibk/local/0">Relational Algebra Calculator</a>
-        </div>
-      </td>
-        </tr>
-        <tr>
-      <td>Jan 20-24</td>
-      <td>
-        Wrapping up Relational Algebra and starting with SQL
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href ="pdfs/Week 2 -  RA and Introduction to SQL.pdf">Week2 Lecture Notes</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href = "pdfs/ReLax_query_examples_inclass_week2.txt">ReLax query examples inclass</a>
-            <a href ="pdfs/univdb-sqlite.db">Database we are working with</a>
-            <a href = "pdfs/Relational Algebra Division.pdf">Every, All Keyword - Division Operator in RA</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href ="https://www.sqlite.org/index.html">SQLite download link</a>
-            <a href ="https://sqlitebrowser.org/">Browser Option for Sqlite</a>
-        </div>
-      </td>
-        </tr>
-        <tr>
-      <td>Jan 27-31</td>
-      <td>
-        SQL Queries
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href ="pdfs/Week 3 -  SQL (1).pdf">Week3 Lecture Notes</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="pdfs/univdb-sqlite-1.db">Database used during lecture</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href=" https://validator.w3.org/">HTML Resources</a>
-            <a href="https://flask.palletsprojects.com/en/2.3.x/">Python Flask Resources1</a>
-            <a href="https://docs.python.org/3/library/venv.html">Python Flask Resources2</a>
-        </div>
-      </td>
-        </tr>
-        <tr>
-      <td>Feb 3-7</td>
-      <td>
-        SQL subqueries and Introduction to Web Development
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href ="pdfs/SQL-Subqueries (3).pdf">Week4 Lecture Notes</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="pdfs/univdb-sqlite-1.db">Database1 used during lecture</a>
-            <a href="pdfs/myuni.db">Database2 used during lecture</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="pdfs/RA_Algorithms-1.pdf">RA Notes summary-Prepared by Rick</a>
-        </div>
-      </td>
-        </tr>
-        <tr>
-      <td>Feb 10-14</td>
-      <td>
-        Introduction to Flask, Introduction to HTML and CSS
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="pdfs/Week 5 - Introduction to Web Development (1).pdf">Week5 Lecture Notes</a>
-            <a href="pdfs/All about Flask-1.pdf">All about Flask</a>
-            <a href="pdfs/_Python Flask Project.pdf">Python Flask Project</a>
-        </div>
-      </td>
-      <td></td>
-      <td>
-        <div class="pdf-links">
-            <a href="https://validator.w3.org/">HTML Validator </a>
-            <a href="https://code.visualstudio.com/download">VS Code</a>
-            <a href="https://flask.palletsprojects.com/en/2.0.x/installation/">Python Flask</a>
-        </div>
-      </td>
-        </tr>
-        <tr>
-      <td>Feb 17-21</td>
-      <td>
-        READING WEEK
-      </td>
-      <td>
-        ENJOY!
-      </td>
-      <td></td>
-      <td></td>
-        </tr>
-        <tr>
-      <td>Feb 24-28</td>
-      <td>
-        Mid Term Exam
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="https://utoronto-my.sharepoint.com/:v:/g/personal/purva_gawde_utoronto_ca/EQjFqPyUsbpCiTAAAbWXEeMB2Gei55E3g3F1TAslHAD20g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5pn4Tc">HTML Recorded Lecture</a>
-            <a href="https://utoronto-my.sharepoint.com/:v:/g/personal/purva_gawde_utoronto_ca/ES-2XCEk0R1BiJGrw1Q1KmkB7TpBhFN-NqQWtUi5Hk4gDA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Go4crS">CSS flexbox and grid layout Recorded Lecture</a>
-            <a href="pdfs/Week 6 - HTML and CSS (1).pdf">Notes to read before next week's lecture</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="https://utoronto-my.sharepoint.com/:f:/g/personal/purva_gawde_utoronto_ca/EiyXgexu1dtBovX0brihpfgBrcOQLXyN8gJ7EV7TuM5m1g?e=Yf9xkm">HTML and CSS Code Handouts</a>
-            <a href="https://utoronto-my.sharepoint.com/:f:/g/personal/purva_gawde_utoronto_ca/EqbaOIFr-phIonijcIKcP88B-5IREBscGngWPxaSuDciXw?e=1kuqKS">Flexbox Code Handouts</a>
-            <a href="https://utoronto-my.sharepoint.com/:f:/g/personal/purva_gawde_utoronto_ca/Ejj1TL1isSNMnbZ9etfBhRMBfo-nRmXvUPT3QCNUyVg57w?e=V84bTN">Grid Code Handouts</a>
-        </div>
-      </td>
-      <td></td>
-        </tr>
-        <tr>
-      <td>Mar 3-7</td>
-      <td>
-        Media Queries, Introduction to JavaScript
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="pdfs/Week 7.pdf">Week7 Lecture Notes</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="pdfs/jsWeek7InClass.zip">Code Handouts</a>
-        </div>
-      </td>
-      <td>
-        <div class="pdf-links">
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">JavaScript Documentation</a>
-        </div>
-      </td>
-        </tr>
-        <tr>
-      <td>Mar 10-14</td>
-      <td>
-      </td>
-      <td></td>
-      <td></td>
-      <td></td>
-        </tr>
-        <tr>
-      <td>Mar 17-21</td>
-      <td>
+            <div class="week-card">
+                <h3>Jan 20-24</h3>
+                <p><strong>Topic:</strong> Relational Algebra & SQL</p>
+                <a href="pdfs/Week 2 - RA and Introduction to SQL.pdf">📄 Week2 Lecture Notes</a>
+                <a href="pdfs/ReLax_query_examples_inclass_week2.txt">📝 ReLax Queries</a>
+            </div>
 
-      </td>
-      <td></td>
-      <td></td>
-        </tr>
-        <tr>
-      <td>Mar 24-28</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-        </tr>
-        <tr>
-      <td>Mar 31 - Apr 4</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-        </tr>
-      
-    </table>
+            <div class="week-card">
+                <h3>Jan 27-31</h3>
+                <p><strong>Topic:</strong> SQL Queries</p>
+                <a href="pdfs/Week 3 - SQL (1).pdf">📄 Week3 Lecture Notes</a>
+            </div>
 
+            <div class="week-card">
+                <h3>Feb 3-7</h3>
+                <p><strong>Topic:</strong> SQL Subqueries & Web Development</p>
+                <a href="pdfs/SQL-Subqueries (3).pdf">📄 Week4 Lecture Notes</a>
+            </div>
+
+            <div class="week-card">
+                <h3>Feb 10-14</h3>
+                <p><strong>Topic:</strong> Flask & HTML/CSS</p>
+                <a href="pdfs/Week 5 - Introduction to Web Development (1).pdf">📄 Week5 Lecture Notes</a>
+            </div>
+
+            <div class="week-card special">
+                <h3>Feb 17-21</h3>
+                <p>🎉 <strong>Reading Week</strong></p>
+                <p>Enjoy your break!</p>
+            </div>
+
+            <div class="week-card special">
+                <h3>Feb 24-28</h3>
+                <p>📚 <strong>Mid Term Exam</strong></p>
+            </div>
+        </div>
     </div>
     <footer>
         <p>© 2025 CSCB20 Course Website | <a href="https://www.utsc.utoronto.ca/cms/computer-science">Faculty of Computer Science at UofT</a></p>
