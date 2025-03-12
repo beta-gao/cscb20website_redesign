@@ -1,0 +1,315 @@
+html {
+    font-size:100.01%;
+    margin:2%;
+  }
+  html, body {
+    height:100%;
+  }
+  
+  /* 📌 让导航栏水平排列并固定在顶部 */
+  .leftnavigation {
+    display: flex;
+    justify-content: center; /* 居中对齐 */
+    align-items: center;
+    background-color: #003366; /* 让导航栏有颜色 */
+    font-family: "Georgia", serif;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .leftnavigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 让菜单项并排 */
+    flex-wrap: wrap; /* 允许换行 */
+    justify-content: center; /* 居中对齐 */
+    gap: 15px; /* 调整菜单项间距 */
+    max-width: 80%; /* 让导航栏不会太宽 */
+    text-align: center;
+  }
+  
+  
+  .leftnavigation ul li {
+    position: relative;
+  }
+  
+  .leftnavigation ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .leftnavigation ul li a:hover {
+    color: #FFD700;
+    background-color: #004488;
+    border-radius: 5px;
+  }
+  
+  #dark-mode-toggle:checked ~ .leftnavigation ul li a:hover{
+    background-color: rgb(196, 194, 199);
+    color: #1b1919;
+    border-radius: 5px;
+  }
+  
+  .content, section {
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .course-title {
+    text-align: center;
+    background-color: aliceblue;
+    color: rgb(114, 95, 160);
+    font-family: "Georgia", serif;
+    font-size: 20px;
+    margin-top: 120px; /* 确保不会被导航栏挡住 */
+    padding: 20px;
+  }
+/* 📌 图片展示区域 */
+.image-gallery {
+    display: flex;
+    flex-direction: column; /* 让两行图片竖直排列 */
+    align-items: center;
+    gap: 20px; /* 两行之间的间距 */
+    margin-top: 20px;
+}
+
+/* 📌 图片行 */
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* 📌 卡片翻转效果 */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; /* 3D 透视效果 */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d; /* 让子元素保持 3D 变换 */
+}
+
+/* 📌 鼠标悬停时触发翻转 */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 📌 正面（图片） */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* 让翻转的背面不可见 */
+    backface-visibility: hidden;
+}
+
+/* 📌 图片样式 */
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px gray;
+}
+
+/* 📌 背面（个人简介） */
+.flip-card-back {
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transform: rotateY(180deg); /* 默认翻转背面 */
+    box-shadow: 2px 2px 10px gray;
+    padding: 10px;
+}
+
+.flip-card-back h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.flip-card-back p {
+    font-size: 14px;
+    text-align: center;
+}
+
+/* 📌 Dark Mode 适配 */
+#dark-mode-toggle:checked ~ .image-gallery {
+    background-color: #1e1e1e; /* 暗色背景 */
+}
+
+#dark-mode-toggle:checked ~ .image-gallery .flip-card-back {
+    background-color: #444;
+}
+
+
+  
+  /* ✅ 让 Dark Mode 按钮正确显示 */
+  #dark-mode-toggle {
+    display: none;
+  }
+  
+  /* ✅ Dark Mode 按钮样式 */
+  .dark-mode-label {
+    position: fixed;
+    top: 15px;  /* 确保按钮在导航栏上面 */
+    right: 20px; /* 靠右 */
+    padding: 10px 20px;
+    background-color: #0055AA;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 2000; /* 确保按钮在最上层 */
+  }
+  
+  /* ✅ 悬停时颜色变化 */
+  .dark-mode-label:hover {
+    background-color: #004488;
+  }
+  
+  .leftnavigation span, .leftnavigation a {
+    padding: 3px 15px 4px
+  }
+  .leftnavigation span {
+    background: rgb(114, 95, 160);
+    color: #fff
+  }
+  
+  #dark-mode-toggle:checked ~ .leftnavigation span{
+    background: rgb(196, 194, 199);
+    color: #1b1919
+  }
+  
+  /* ✅ 修正 Dark Mode 作用整个网页 */
+  #dark-mode-toggle:checked ~ * {
+    background-color: #121212; /* 改变整个页面背景 */
+    color: #E0E0E0; /* 文字变亮 */
+  }
+  
+  /* ✅ Dark Mode 影响导航栏 */
+  #dark-mode-toggle:checked ~ .leftnavigation {
+    background-color:  #4c4a4a;
+  }
+  
+  /* ✅ Dark Mode 影响内容区 */
+  #dark-mode-toggle:checked ~ .content{
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+  }
+  
+  #dark-mode-toggle:checked ~ section{
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+  }
+  
+  #dark-mode-toggle:checked ~ body::after {
+    background-color: #121212 !important;
+  }
+  
+  
+  body {
+    background-color: aliceblue;
+    margin-top: 80px;
+  }
+  
+  .background1, .background2{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: aliceblue;
+    z-index: -1;
+    transition: 0.5s;
+  }
+  
+  #dark-mode-toggle:checked ~ .dark-mode-label {
+    background: rgb(196, 194, 199);
+    color: #1b1919
+  }
+  
+  input:checked + label + .background1 + .background2{
+    background: #242424;
+  }
+  input{
+    display: none;
+  }
+  
+  html, body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex-grow: 1; /* 让内容填满剩余空间 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 确保文字从上开始 */
+  }
+  
+  .extra-space {
+    flex-grow: 1; /* 让这个空 div 填充空白 */
+  }
+  
+  
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #003366;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    padding: 15px 0;
+    flex-shrink: 0;
+  }
+  
+  footer a {
+    color: #FFD700;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  @media screen and (max-width: 1024px) { /* 适配平板等中等屏幕 */
+    .leftnavigation ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) { /* 适配手机 */
+    .leftnavigation ul {
+      flex-direction: column; /* 垂直排列 */
+      align-items: center;
+    }
+  }
+  
