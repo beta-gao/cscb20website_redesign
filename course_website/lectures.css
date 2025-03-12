@@ -106,7 +106,8 @@ html, body {
 }
 .leftnavigation span {
   background: rgb(114, 95, 160);
-  color: #fff
+  color: #fff;
+  border-radius : 5px;
 }
 
 #dark-mode-toggle:checked ~ .content .leftnavigation {
@@ -115,7 +116,8 @@ html, body {
 
 #dark-mode-toggle:checked ~ .content .leftnavigation span{
     background: rgb(196, 194, 199);
-    color: #1b1919
+    color: #1b1919;
+    border-radius : 5px;
 }
 
 input:checked + label{

@@ -6,6 +6,12 @@ html, body {
   height:100%;
 }
 
+/* ✅ 防止水平滚动 */
+html, body {
+  overflow-x: hidden;  /* 禁止水平滚动 */
+        /* 限制最大宽度 */
+}
+
 /* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
   display: flex;
@@ -62,6 +68,8 @@ html, body {
 .content, section {
   margin: 0;
   padding: 20px;
+  max-width: 100%;  
+  box-sizing: border-box; 
 }
 
 .course-title {
@@ -72,6 +80,25 @@ html, body {
   font-size: 20px;
   margin-top: 120px; /* 确保不会被导航栏挡住 */
   padding: 20px;
+}
+
+.course-title {
+  text-align: center;
+  background-color: aliceblue;
+  color: rgb(114, 95, 160);
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  margin-top: 100px; /* 确保不会被导航栏遮挡 */
+  padding: 20px;
+  border-bottom: 2px solid #003366; /* 增加分隔线 */
+  max-width: 100%;  
+  box-sizing: border-box; 
+}
+
+#dark-mode-toggle:checked ~ .course-title {
+  background-color: #4c4a4a;
+  color: #E0E0E0;
+  border-bottom: 2px solid #FFD700;
 }
 
 
@@ -105,23 +132,24 @@ html, body {
 }
 .leftnavigation span {
   background: rgb(114, 95, 160);
-  color: #fff
+  color: #fff;
+  border-radius : 5px;
 }
 
 #dark-mode-toggle:checked ~ .leftnavigation span{
   background: rgb(196, 194, 199);
-  color: #1b1919
+  color: #1b1919;
+  border-radius : 5px;
 }
 
-/* ✅ 修正 Dark Mode 作用整个网页 */
 #dark-mode-toggle:checked ~ * {
-  background-color: #121212; /* 改变整个页面背景 */
-  color: #E0E0E0; /* 文字变亮 */
+  background-color: #4c4a4a;
+  color: #E0E0E0;
 }
 
-/* ✅ Dark Mode 影响导航栏 */
+/* ✅ Dark Mode 下的导航栏 */
 #dark-mode-toggle:checked ~ .leftnavigation {
-  background-color:  #4c4a4a;
+  background-color: #1E1E1E;
 }
 
 /* ✅ Dark Mode 影响内容区 */
@@ -143,6 +171,8 @@ html, body {
 body {
   background-color: aliceblue;
   margin-top: 80px;
+  max-width: 100%;  
+  box-sizing: border-box; 
 }
 
 .background1, .background2{
@@ -178,6 +208,8 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* 确保文字从上开始 */
+  max-width: 100%;  
+  box-sizing: border-box; 
 }
 
 .extra-space {
@@ -199,6 +231,10 @@ footer {
   width: 100%;
   padding: 15px 0;
   flex-shrink: 0;
+}
+
+#dark-mode-toggle:checked ~ footer{
+  background-color: #1b1919;
 }
 
 footer a {
@@ -223,4 +259,82 @@ footer a:hover {
     flex-direction: column; /* 垂直排列 */
     align-items: center;
   }
+}
+
+
+/* ✅ 让 Welcome 部分占满宽度 */
+.welcome-banner {
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+  background: #f0f4ff; /* 柔和背景 */
+  color: #003366;
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 2px solid #003366;
+  max-width: 100%;  
+  box-sizing: border-box; 
+}
+
+/* ✅ 课程主要内容：瀑布流卡片布局 */
+.container {
+  column-count: 3; /* 设置瀑布流的列数 */
+  column-gap: 20px;
+  padding: 20px;
+}
+
+/* ✅ 卡片样式 */
+.card {
+  display: inline-block; /* 让卡片支持 column 布局 */
+  width: 100%; /* 让它填充列宽 */
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 100%;  
+  box-sizing: border-box; 
+}
+
+/* ✅ 鼠标悬停效果 */
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
+}
+
+.card a{
+  color:cadetblue;
+}
+
+.card {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ✅ 适配 Dark Mode */
+#dark-mode-toggle:checked ~ .container .card {
+  background-color: #2E2E2E;
+  color: #E0E0E0;
+}
+
+#dark-mode-toggle:checked ~ .welcome-banner {
+  background-color: #1E1E1E;
+  color:darkkhaki;
+  border-bottom: 2px solid #FFD700;
+}
+
+.card-img {
+  display: block;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  margin: 10px auto;
+}
+
+
+.how-the-course {
+  width: 80%;
+  margin: 10px auto;
+  display: block;
 }
