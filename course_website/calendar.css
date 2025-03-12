@@ -1,6 +1,7 @@
 html {
-  font-size: 100.01%;
-  margin: 2%;
+  font-size: 100%;
+  margin: 0;  /* 取消 2% 的 margin */
+  padding: 0;
 }
 html, body {
   height: 100%;
@@ -11,9 +12,6 @@ html, body {
   font-family: "Georgia", serif;
 }
 
-body {
-  padding-top: 80px;
-}
 
 /* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
@@ -21,9 +19,11 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #003366;
+  font-family: "Georgia", serif;
   padding: 15px 0;
+  height: var(--nav-height); /* 适配屏幕高度 */
+  width: 100%; /* 占满屏幕宽度 */
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -59,6 +59,22 @@ body {
   background-color: #004488;
   border-radius: 5px;
 }
+:root {
+  --nav-height: 20vh;
+}
+
+.course-title {
+  text-align: center;
+  background-color: aliceblue;
+  color: rgb(114, 95, 160);
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  margin-top: var(--nav-height); /* 直接使用导航栏高度 */ 
+  padding: 20px;
+  border-bottom: 2px solid #003366;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 
 .content, section {
   margin: 0;
@@ -66,19 +82,31 @@ body {
   flex-grow: 1;
 }
 
-.course-title {
-  text-align: center;
-  background-color: aliceblue;
-  color: rgb(114, 95, 160);
-  font-size: 20px;
-  margin-top: 120px;
-  padding: 20px;
-}
-
 /* ✅ 让 Dark Mode 按钮正确显示 */
 #dark-mode-toggle {
   display: none;
 }
+#dark-mode-toggle:checked ~ .course-title {
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+    border-bottom: 2px solid #FFD700;
+  }
+
+  #dark-mode-toggle:checked ~ .dark-mode-label {
+    background: rgb(196, 194, 199);
+    color: #1b1919
+  }
+    
+  #dark-mode-toggle:checked ~ .leftnavigation span{
+    background: rgb(196, 194, 199);
+    color: #1b1919
+  }
+    
+    #dark-mode-toggle:checked ~ .leftnavigation ul li a:hover{
+      background-color: rgb(196, 194, 199);
+      color: #1b1919;
+      border-radius: 5px;
+    }
 
 /* ✅ Dark Mode 按钮样式 */
 .dark-mode-label {
@@ -114,7 +142,7 @@ body {
 }
 
 #dark-mode-toggle:checked ~ .leftnavigation {
-  background-color: #4c4a4a;
+  background-color: #1e1e1e;
 }
 
 #dark-mode-toggle:checked ~ .content,
@@ -127,10 +155,6 @@ body {
   background-color: #121212 !important;
 }
 
-body {
-  background-color: aliceblue;
-  margin-top: 80px;
-}
 
 .background1, .background2{
   position: absolute;

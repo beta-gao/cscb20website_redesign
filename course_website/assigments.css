@@ -1,3 +1,10 @@
+/* ✅ 全局基础样式 */
+html {
+    font-size: 100%;
+    margin: 0;  /* 取消 2% 的 margin */
+    padding: 0;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -21,12 +28,13 @@ html, body {
     background-color: #003366;
     font-family: "Georgia", serif;
     padding: 15px 0;
+    height: var(--nav-height); /* 适配屏幕高度 */
+    width: 100%; /* 占满屏幕宽度 */
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-}
+  }
 
 .leftnavigation ul {
     list-style: none;
@@ -77,6 +85,26 @@ html, body {
     border-radius : 5px;
 }
 
+:root {
+    --nav-height: 20vh;
+  }
+  
+.assignment-header {
+    text-align: center;
+    background-color: aliceblue;
+    color: rgb(114, 95, 160);
+    font-family: "Georgia", serif;
+    font-size: 22px;
+    margin-top: var(--nav-height); /* 直接使用导航栏高度 */ 
+    padding: 20px;
+    border-bottom: 2px solid #003366;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+/* ✅ Dark Mode 下的导航栏 */
 #dark-mode-toggle:checked ~ .leftnavigation {
     background-color: #1E1E1E;
 }
@@ -108,12 +136,6 @@ html, body {
 #dark-mode-toggle:checked ~ .dark-mode-label {
     background: rgb(196, 194, 199);
     color: #1b1919;
-}
-
-
-body {
-    background-color: aliceblue;
-    margin-top: 80px;
 }
 
 #dark-mode-toggle:checked ~ .assignments-container{
@@ -162,33 +184,13 @@ footer a:hover {
     }
 }
 
-.assignment-header {
-    text-align: center;
-    background-color: aliceblue;
-    color: rgb(114, 95, 160);
-    font-family: "Georgia", serif;
-    font-size: 22px;
-    margin-top: 30px;
-    
-    border-bottom: 2px solid #003366;
-}
-
+/* ✅ Dark Mode 下的 Labs 标题 */
 #dark-mode-toggle:checked ~ .assignment-header {
     background-color: #4c4a4a;
     color: #E0E0E0;
     border-bottom: 1px solid #FFD700;
 }
 
-.assignments-header {
-    text-align: center;
-    background-color: aliceblue;
-    color: rgb(114, 95, 160);
-    font-family: "Georgia", serif;
-    font-size: 22px;
-    margin-top: 100px;
-    padding: 20px;
-    border-bottom: 2px solid #003366;
-}
 
 #dark-mode-toggle:checked ~ .assignments-header {
     background-color: #4c4a4a;
@@ -264,5 +266,3 @@ footer a:hover {
     background-color: #444;
     color: #DDD;
 }
-
-

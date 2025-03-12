@@ -16,20 +16,20 @@ html {
     min-height: calc(100vh - 120px);
 }
 
-  /* 📌 让导航栏水平排列并固定在顶部 */
-  .leftnavigation {
-    display: flex;
-    justify-content: center; /* 居中对齐 */
-    align-items: center;
-    background-color: #003366; /* 让导航栏有颜色 */
-    font-family: "Georgia", serif;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
+.leftnavigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #003366;
+  font-family: "Georgia", serif;
+  padding: 15px 0;
+  height: var(--nav-height); 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
   
   .leftnavigation ul {
     list-style: none;
@@ -67,6 +67,23 @@ html {
     background-color: rgb(196, 194, 199);
     color: #1b1919;
     border-radius: 5px;
+  }
+
+  :root {
+    --nav-height: 20vh;
+  }
+  
+  .labs-header{
+    text-align: center;
+    background-color: aliceblue;
+    color: rgb(114, 95, 160);
+    font-family: "Georgia", serif;
+    font-size: 22px;
+    margin-top: var(--nav-height); /* 直接使用导航栏高度 */
+    padding: 20px;
+    border-bottom: 2px solid #003366;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .content, section {
@@ -280,17 +297,6 @@ footer a:hover {
 #dark-mode-toggle:checked ~ .content .leftnavigation span{
     background: rgb(196, 194, 199);
     color: #1b1919
-}
-
-.labs-header {
-    text-align: center;
-    background-color: aliceblue;
-    color: rgb(114, 95, 160);
-    font-family: "Georgia", serif;
-    font-size: 22px;
-    margin-top: 100px; /* 确保不会被导航栏遮挡 */
-    padding: 20px;
-    border-bottom: 2px solid #003366; /* 增加分隔线 */
 }
 
 /* ✅ Dark Mode 下的 Labs 标题 */

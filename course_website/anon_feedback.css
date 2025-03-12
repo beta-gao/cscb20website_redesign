@@ -19,12 +19,13 @@ html, body {
     background-color: #003366;
     font-family: "Georgia", serif;
     padding: 15px 0;
+    height: var(--nav-height); /* 适配屏幕高度 */
+    width: 100%; /* 占满屏幕宽度 */
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-}
+  }
 .leftnavigation ul {
     list-style: none;
     padding: 0;
@@ -56,15 +57,23 @@ html, body {
     padding: 20px;
 }
 
-.course-title {
+:root {
+    --nav-height: 20vh;
+  }
+  
+  .course-title {
     text-align: center;
     background-color: aliceblue;
     color: rgb(114, 95, 160);
     font-family: "Georgia", serif;
-    font-size: 20px;
-    margin-top: 120px;
+    font-size: 22px;
+    margin-top: calc(var(--nav-height) + var(--nav-height) * 0.1); /* left navigation 底部 + 10% 高度 */
     padding: 20px;
-}
+    border-bottom: 2px solid #003366;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
 #dark-mode-toggle:checked ~ .content .leftnavigation ul li a:hover{
     background-color: rgb(196, 194, 199);
     color: #1b1919;

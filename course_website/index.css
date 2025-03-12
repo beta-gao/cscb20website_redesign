@@ -10,6 +10,8 @@ html, body {
   overflow-x: hidden;
 }
 
+
+/* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
   display: flex;
   justify-content: center;
@@ -17,12 +19,14 @@ html, body {
   background-color: #003366;
   font-family: "Georgia", serif;
   padding: 15px 0;
+  height: var(--nav-height); /* 适配屏幕高度 */
+  width: 100%; /* 占满屏幕宽度 */
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
 }
+
 
 .leftnavigation ul {
   list-style: none;
@@ -56,6 +60,24 @@ html, body {
   border-radius: 5px;
 }
 
+:root {
+  --nav-height: 20vh;
+}
+
+.course-title {
+  text-align: center;
+  background-color: aliceblue;
+  color: rgb(114, 95, 160);
+  font-family: "Georgia", serif;
+  font-size: 22px;
+  margin-top: var(--nav-height); /* 直接使用导航栏高度 */
+  padding: 20px;
+  border-bottom: 2px solid #003366;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
 #dark-mode-toggle:checked ~ .leftnavigation ul li a:hover{
   background-color: rgb(196, 194, 199);
   color: #1b1919;
@@ -69,28 +91,8 @@ html, body {
   box-sizing: border-box; 
 }
 
-.course-title {
-  text-align: center;
-  background-color: aliceblue;
-  color: rgb(114, 95, 160);
-  font-family: "Georgia", serif;
-  font-size: 20px;
-  margin-top: 120px;
-  padding: 20px;
-}
 
-.course-title {
-  text-align: center;
-  background-color: aliceblue;
-  color: rgb(114, 95, 160);
-  font-family: "Georgia", serif;
-  font-size: 22px;
-  margin-top: 100px;
-  padding: 20px;
-  border-bottom: 2px solid #003366;
-  max-width: 100%;  
-  box-sizing: border-box; 
-}
+
 
 #dark-mode-toggle:checked ~ .course-title {
   background-color: #4c4a4a;
@@ -198,10 +200,6 @@ html, body {
   flex-grow: 1;
 }
 
-.content {
-  flex: 1;
-  padding: 20px;
-}
 
 footer {
   text-align: center;
