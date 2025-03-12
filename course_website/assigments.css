@@ -1,0 +1,285 @@
+/* ✅ 全局基础样式 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 100%;
+    background-color: aliceblue;
+}
+
+/* ✅ 让内容区填充剩余空间 */
+.content {
+    flex: 1;
+    padding: 20px;
+    min-height: calc(100vh - 120px);
+}
+
+/* 📌 让导航栏水平排列并固定在顶部 */
+.leftnavigation {
+    display: flex;
+    justify-content: center; /* 居中对齐 */
+    align-items: center;
+    background-color: #003366; /* 深蓝色背景 */
+    font-family: "Georgia", serif;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* ✅ 导航栏菜单 */
+.leftnavigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 80%;
+    text-align: center;
+}
+
+.leftnavigation ul li {
+    position: relative;
+}
+
+/* ✅ 导航栏链接 */
+.leftnavigation ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.leftnavigation ul li a:hover {
+    color: #FFD700;
+    background-color: #004488;
+    border-radius: 5px;
+}
+
+  .dark-mode-label:hover {
+    background-color: #004488;
+  }
+  
+  .leftnavigation span, .leftnavigation a {
+    padding: 3px 15px 4px
+  }
+  .leftnavigation span {
+    background: rgb(114, 95, 160);
+    color: #fff
+  }
+  #dark-mode-toggle:checked ~ .leftnavigation span{
+    background: rgb(196, 194, 199);
+    color: #1b1919
+}
+
+
+/* ✅ Dark Mode 下的导航栏 */
+#dark-mode-toggle:checked ~ .leftnavigation {
+    background-color: #1E1E1E;
+}
+
+#dark-mode-toggle:checked ~ .leftnavigation ul li a:hover {
+    background-color: rgb(196, 194, 199);
+    color: #1b1919;
+    border-radius: 5px;
+}
+
+/* ✅ Dark Mode 按钮 */
+.dark-mode-label {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #0055AA;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 2000;
+}
+
+.dark-mode-label:hover {
+    background-color: #004488;
+}
+
+#dark-mode-toggle:checked ~ .dark-mode-label {
+    background: rgb(196, 194, 199);
+    color: #1b1919;
+}
+
+
+body {
+    background-color: aliceblue;
+    margin-top: 80px;
+}
+
+#dark-mode-toggle:checked ~ .assignments-container{
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+}
+
+/* ✅ 页脚样式 */
+footer {
+    text-align: center;
+    background-color: #003366;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: auto; /* 让 footer 向下推到底部 */
+    position: relative;
+}
+
+/* ✅ Dark Mode 下的页脚 */
+#dark-mode-toggle:checked ~ footer {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+}
+
+/* ✅ 页脚链接 */
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ✅ 响应式布局（小屏幕优化） */
+@media screen and (max-width: 768px) {
+    .lab-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lab-card {
+        width: 90%;
+    }
+
+    .leftnavigation ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.assignment-header {
+    text-align: center;
+    background-color: aliceblue;
+    color: rgb(114, 95, 160);
+    font-family: "Georgia", serif;
+    font-size: 22px;
+    margin-top: 30px; /* 确保不会被导航栏遮挡 */
+    
+    border-bottom: 2px solid #003366;
+}
+
+/* ✅ Dark Mode 下的 Labs 标题 */
+#dark-mode-toggle:checked ~ .assignment-header {
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+    border-bottom: 1px solid #FFD700;
+}
+
+/* ✅ 让 Assignment 页面风格统一 */
+.assignments-header {
+    text-align: center;
+    background-color: aliceblue;
+    color: rgb(114, 95, 160);
+    font-family: "Georgia", serif;
+    font-size: 22px;
+    margin-top: 100px;
+    padding: 20px;
+    border-bottom: 2px solid #003366;
+}
+
+#dark-mode-toggle:checked ~ .assignments-header {
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+    border-bottom: 2px solid #FFD700;
+}
+
+/* ✅ 交互式卡片布局 */
+.assignments-container {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ✅ Assignment 卡片 */
+.assignment-card {
+    width: 80%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.assignment-card a{
+    color:darkgoldenrod;
+    text-decoration:dashed;
+}
+
+.assignment-card a:hover {
+    text-decoration: underline;
+}
+
+.assignment-card:hover {
+    transform: scale(1.02);
+}
+
+/* ✅ `<summary>` 样式（点击展开） */
+.assignment-card summary {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #0055AA;
+    color: white;
+    border-radius: 5px;
+    list-style: none; /* 去掉默认的小箭头 */
+}
+
+.assignment-card[open] summary {
+    background-color: #004488;
+}
+
+/* ✅ 详情部分默认隐藏 */
+.assignment-card p {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+/* ✅ Dark Mode */
+#dark-mode-toggle:checked ~ .assignments-container .assignment-card {
+    background-color: #2E2E2E;
+    color: #E0E0E0;
+}
+
+#dark-mode-toggle:checked ~ .assignments-container .assignment-card summary {
+    background-color:darkkhaki;
+    color: black;
+}
+
+#dark-mode-toggle:checked ~ .assignments-container .assignment-card p {
+    background-color: #444;
+    color: #DDD;
+}
+
+
