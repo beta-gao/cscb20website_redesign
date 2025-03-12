@@ -6,18 +6,15 @@ html, body {
   height:100%;
 }
 
-/* ✅ 防止水平滚动 */
 html, body {
-  overflow-x: hidden;  /* 禁止水平滚动 */
-        /* 限制最大宽度 */
+  overflow-x: hidden;
 }
 
-/* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
   display: flex;
-  justify-content: center; /* 居中对齐 */
+  justify-content: center;
   align-items: center;
-  background-color: #003366; /* 让导航栏有颜色 */
+  background-color: #003366;
   font-family: "Georgia", serif;
   padding: 15px 0;
   position: fixed;
@@ -31,11 +28,11 @@ html, body {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* 让菜单项并排 */
-  flex-wrap: wrap; /* 允许换行 */
-  justify-content: center; /* 居中对齐 */
-  gap: 15px; /* 调整菜单项间距 */
-  max-width: 80%; /* 让导航栏不会太宽 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 80%;
   text-align: center;
 }
 
@@ -78,7 +75,7 @@ html, body {
   color: rgb(114, 95, 160);
   font-family: "Georgia", serif;
   font-size: 20px;
-  margin-top: 120px; /* 确保不会被导航栏挡住 */
+  margin-top: 120px;
   padding: 20px;
 }
 
@@ -88,9 +85,9 @@ html, body {
   color: rgb(114, 95, 160);
   font-family: "Georgia", serif;
   font-size: 22px;
-  margin-top: 100px; /* 确保不会被导航栏遮挡 */
+  margin-top: 100px;
   padding: 20px;
-  border-bottom: 2px solid #003366; /* 增加分隔线 */
+  border-bottom: 2px solid #003366;
   max-width: 100%;  
   box-sizing: border-box; 
 }
@@ -101,17 +98,14 @@ html, body {
   border-bottom: 2px solid #FFD700;
 }
 
-
-/* ✅ 让 Dark Mode 按钮正确显示 */
 #dark-mode-toggle {
   display: none;
 }
 
-/* ✅ Dark Mode 按钮样式 */
 .dark-mode-label {
   position: fixed;
-  top: 15px;  /* 确保按钮在导航栏上面 */
-  right: 20px; /* 靠右 */
+  top: 15px;
+  right: 20px;
   padding: 10px 20px;
   background-color: #0055AA;
   color: white;
@@ -119,10 +113,9 @@ html, body {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  z-index: 2000; /* 确保按钮在最上层 */
+  z-index: 2000;
 }
 
-/* ✅ 悬停时颜色变化 */
 .dark-mode-label:hover {
   background-color: #004488;
 }
@@ -147,12 +140,10 @@ html, body {
   color: #E0E0E0;
 }
 
-/* ✅ Dark Mode 下的导航栏 */
 #dark-mode-toggle:checked ~ .leftnavigation {
   background-color: #1E1E1E;
 }
 
-/* ✅ Dark Mode 影响内容区 */
 #dark-mode-toggle:checked ~ .content{
   background-color: #4c4a4a;
   color: #E0E0E0;
@@ -195,19 +186,17 @@ html, body {
 }
 
 .content {
-  flex-grow: 1; /* 让内容填满剩余空间 */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* 确保文字从上开始 */
+  justify-content: flex-start;
   max-width: 100%;  
   box-sizing: border-box; 
 }
 
 .extra-space {
-  flex-grow: 1; /* 让这个空 div 填充空白 */
+  flex-grow: 1;
 }
-
-
 
 .content {
   flex: 1;
@@ -237,7 +226,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 1024px) { /* 适配平板等中等屏幕 */
+@media screen and (max-width: 1024px) {
   .leftnavigation ul {
     flex-wrap: wrap;
     justify-content: center;
@@ -245,20 +234,18 @@ footer a:hover {
   }
 }
 
-@media screen and (max-width: 768px) { /* 适配手机 */
+@media screen and (max-width: 768px) {
   .leftnavigation ul {
-    flex-direction: column; /* 垂直排列 */
+    flex-direction: column;
     align-items: center;
   }
 }
 
-
-/* ✅ 让 Welcome 部分占满宽度 */
 .welcome-banner {
   width: 100%;
   text-align: center;
   padding: 40px 20px;
-  background: #f0f4ff; /* 柔和背景 */
+  background: #f0f4ff; 
   color: #003366;
   font-family: "Georgia", serif;
   font-size: 22px;
@@ -268,17 +255,15 @@ footer a:hover {
   box-sizing: border-box; 
 }
 
-/* ✅ 课程主要内容：瀑布流卡片布局 */
 .container {
-  column-count: 3; /* 设置瀑布流的列数 */
+  column-count: 3;
   column-gap: 20px;
   padding: 20px;
 }
 
-/* ✅ 卡片样式 */
 .card {
-  display: inline-block; /* 让卡片支持 column 布局 */
-  width: 100%; /* 让它填充列宽 */
+  display: inline-block;
+  width: 100%;
   background: white;
   padding: 20px;
   margin-bottom: 20px;
@@ -289,7 +274,6 @@ footer a:hover {
   box-sizing: border-box; 
 }
 
-/* ✅ 鼠标悬停效果 */
 .card:hover {
   transform: scale(1.02);
   box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
@@ -303,7 +287,6 @@ footer a:hover {
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* ✅ 适配 Dark Mode */
 #dark-mode-toggle:checked ~ .container .card {
   background-color: #2E2E2E;
   color: #E0E0E0;
@@ -322,7 +305,6 @@ footer a:hover {
   object-fit: contain;
   margin: 10px auto;
 }
-
 
 .how-the-course {
   width: 80%;

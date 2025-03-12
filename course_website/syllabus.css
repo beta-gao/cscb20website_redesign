@@ -1,46 +1,94 @@
-/* ===================
-   1. 基础设置
-   =================== */
-   html, body {
+html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     font-family: "Georgia", serif;
     background-color: aliceblue;
 }
 
-body {
-    padding-top: 80px;
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ===================
-   2. 内容区 + 粘性页脚
-   =================== */
-.pdf-links {
+.content {
     flex: 1;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.syllabus-header {
+    text-align: center;
     background-color: aliceblue;
-}
-
-.pdf-links {
-    margin-top: 80px;
+    color: rgb(114, 95, 160);
+    font-family: "Georgia", serif;
+    font-size: 20px;
+    margin-top: 120px;
     padding: 20px;
+    border-bottom: 2px solid #003366;
 }
 
-.pdf-links a {
-    font-size: 18px;
-    color: #003366;
+#dark-mode-toggle:checked ~ .syllabus-header {
+    background-color: #4c4a4a;
+    color: #E0E0E0;
+    border-bottom: 2px solid #FFD700;
+}
+
+.syllabus-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+
+.syllabus-info, .syllabus-download {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.syllabus-info ul{
+    color:cadetblue
+}
+
+
+.syllabus-info:hover, .syllabus-download:hover {
+    transform: scale(1.05);
+}
+
+#dark-mode-toggle:checked ~ .syllabus-container .syllabus-info,
+#dark-mode-toggle:checked ~ .syllabus-container .syllabus-download {
+    background-color: #2E2E2E;
+    color: #E0E0E0;
+    box-shadow: 2px 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+.syllabus-link {
+    display: block;
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #0055AA;
+    color: white;
+    border-radius: 5px;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s;
 }
 
-.pdf-links a:hover {
-    text-decoration: underline;
+.syllabus-link:hover {
+    background-color: #004488;
 }
 
+#dark-mode-toggle:checked ~ .syllabus-container .syllabus-download .syllabus-link {
+    background-color: darkkhaki;
+    color: black;
+}
 
 footer {
     text-align: center;
@@ -50,6 +98,7 @@ footer {
     width: 100%;
     padding: 15px 0;
     flex-shrink: 0;
+    position: relative;
 }
 
 footer a {
@@ -61,9 +110,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ===================
-   3. 导航栏
-   =================== */
 .leftnavigation {
     display: flex;
     justify-content: center;
@@ -112,9 +158,6 @@ footer a:hover {
     color: #fff;
 }
 
-/* ===================
-   4. 暗黑模式
-   =================== */
 #dark-mode-toggle {
     display: none;
 }
@@ -143,29 +186,30 @@ footer a:hover {
 }
 
 #dark-mode-toggle:checked ~ .leftnavigation {
-    background-color: #4c4a4a;
+    background-color:#1E1E1E;
 }
 
-#dark-mode-toggle:checked ~ .content {
+#dark-mode-toggle:checked ~ .dark-mode-label {
+    background: rgb(196, 194, 199);
+    color: #1b1919
+}
+
+#dark-mode-toggle:checked ~ .leftnavigation span{
+    background: rgb(196, 194, 199);
+    color: #1b1919
+}
+
+#dark-mode-toggle:checked ~ .leftnavigation ul li a:hover{
+    background-color: rgb(196, 194, 199);
+    color: #1b1919;
+    border-radius: 5px;
+}
+
+#dark-mode-toggle:checked ~ .pdf-links {
     background-color: #4c4a4a;
     color: #E0E0E0;
 }
 
-/* ===================
-   5. 头部样式
-   =================== */
-header {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding: 20px;
-    color: cadetblue;
-    background-color: aliceblue;
-}
-
-/* ===================
-   6. 响应式设计
-   =================== */
 @media screen and (max-width: 768px) {
     .leftnavigation ul {
         flex-direction: column;

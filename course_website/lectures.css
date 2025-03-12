@@ -6,12 +6,11 @@ html, body {
   height:100%;
 }
 
-/* 📌 让导航栏水平排列并固定在顶部 */
 .leftnavigation {
   display: flex;
-  justify-content: center; /* 居中对齐 */
+  justify-content: center;
   align-items: center;
-  background-color: #003366; /* 让导航栏有颜色 */
+  background-color: #003366;
   font-family: "Georgia", serif;
   padding: 15px 0;
   position: fixed;
@@ -25,11 +24,11 @@ html, body {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* 让菜单项并排 */
-  flex-wrap: wrap; /* 允许换行 */
-  justify-content: center; /* 居中对齐 */
-  gap: 15px; /* 调整菜单项间距 */
-  max-width: 80%; /* 让导航栏不会太宽 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 80%;
   text-align: center;
 }
 
@@ -64,17 +63,14 @@ html, body {
   padding: 20px;
 }
 
-
-/* ✅ 让 Dark Mode 按钮正确显示 */
 #dark-mode-toggle {
   display: none;
 }
 
-/* ✅ Dark Mode 按钮样式 */
 .dark-mode-label {
   position: fixed;
-  top: 15px;  /* 确保按钮在导航栏上面 */
-  right: 20px; /* 靠右 */
+  top: 15px;
+  right: 20px;
   padding: 10px 20px;
   background-color: #0055AA;
   color: white;
@@ -82,7 +78,7 @@ html, body {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  z-index: 2000; /* 确保按钮在最上层 */
+  z-index: 2000;
 }
 
 #dark-mode-toggle:checked ~ .dark-mode-label {
@@ -90,7 +86,6 @@ html, body {
     color: #1b1919
 }
 
-/* ✅ 悬停时颜色变化 */
 .dark-mode-label:hover {
   background-color: #004488;
 }
@@ -132,7 +127,6 @@ body {
     margin-top: 80px;
   }
 
-/* ✅ 课程页面主体 */
 .lectures-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -142,7 +136,6 @@ body {
     margin: auto;
 }
 
-/* ✅ 每个 Week Card */
 .week-card {
     background: white;
     padding: 15px;
@@ -156,14 +149,12 @@ body {
     transform: scale(1.02);
 }
 
-/* ✅ 让特殊周（如 Reading Week）更明显 */
 .week-card.special {
     background-color:#FFD700;
     color: black;
     text-align: center;
 }
 
-/* ✅ 让 Lecture Links 更好看 */
 .week-card a {
     display: block;
     padding: 5px 0;
@@ -176,7 +167,6 @@ body {
     text-decoration: underline;
 }
 
-/* ✅ 适配 Dark Mode */
 #dark-mode-toggle:checked ~ .content .lectures-container .week-card {
     background-color: #2E2E2E;
     color: #E0E0E0;
@@ -185,13 +175,12 @@ body {
 #dark-mode-toggle:checked ~ .content .lectures-container .week-card a {
     color: #FFD700;
 }
-/* ✅ 修正 Dark Mode 作用整个网页 */
+
 #dark-mode-toggle:checked ~ * {
-  background-color: #121212; /* 改变整个页面背景 */
-  color: #E0E0E0; /* 文字变亮 */
+  background-color: #121212;
+  color: #E0E0E0;
 }
 
-/* ✅ Dark Mode 影响内容区 */
 #dark-mode-toggle:checked ~ .content{
   background-color: #4c4a4a;
   color: #E0E0E0;
@@ -213,12 +202,11 @@ body {
     color: rgb(114, 95, 160);
     font-family: "Georgia", serif;
     font-size: 22px;
-    margin-top: 100px; /* 确保不会被导航栏遮挡 */
+    margin-top: 100px;
     padding: 20px;
     border-bottom: 2px solid #003366;
 }
 
-/* ✅ Dark Mode 适配 */
 #dark-mode-toggle:checked ~ .content.lectures-header {
     background-color: #1E1E1E;
     color: #E0E0E0;
@@ -238,12 +226,12 @@ body {
   }
 
   .pdf-links {
-    text-align: center; /* 让内部文字居中 */
+    text-align: center;
 }
 
 .pdf-links a {
-    display: block; /* 让每个链接占据整行 */
-    margin: 10px auto; /* 自动居中 */
+    display: block;
+    margin: 10px auto;
     font-family: 'Times New Roman', Times, serif;
     color:cadetblue
 }
@@ -268,7 +256,7 @@ footer {
     font-size: 14px;
     width: 100%;
     padding: 15px 0; 
-    position: relative; /* 避免覆盖内容 */
+    position: relative;
 }
 
 body:has(footer):after {
@@ -292,23 +280,19 @@ footer a:hover {
     border-bottom: 2px solid #FFD700;
 }
 
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+  table th, table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
 
-  
-  /* 📌 响应式优化 */
-  @media screen and (max-width: 768px) {
-    table {
-      width: 100%; /* 在小屏幕上填满 */
-    }
-    table th, table td {
-      padding: 8px; /* 减少 padding，避免单元格过大 */
-      font-size: 14px; /* 字体变小 */
-    }
+@media screen and (max-width: 768px) {
+  table {
+    width: 95%;
   }
-  
-  /* 📌 响应式优化 */
-  @media screen and (max-width: 768px) {
-    table {
-      width: 95%; /* 在小屏幕上让表格更窄 */
-    }
-  }
+}
   
